@@ -1,0 +1,30 @@
+{
+  "name": "les-delices-de-sousou",
+  "version": "1.0.0",
+  "description": "Site vitrine pour Les Délices de Sousou - Pâtisserie algérienne & Buffets prestige",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "test": "echo \"Site statique - pas de tests configurés\" && exit 0"
+  },
+  "keywords": [
+    "patisserie",
+    "algerienne",
+    "gateaux",
+    "buffet",
+    "prestige",
+    "vitrine",
+    "landing-page"
+  ],
+  "author": "Les Délices de Sousou",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VOTRE_USERNAME/les-delices-de-sousou.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VOTRE_USERNAME/les-delices-de-sousou/issues"
+  },
+  "homepage": "https://github.com/VOTRE_USERNAME/les-delices-de-sousou#readme"
+}
