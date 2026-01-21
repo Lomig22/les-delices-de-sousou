@@ -336,6 +336,7 @@ ul {
     background-position: center;
     background-attachment: fixed;
     overflow: hidden;
+    z-index: 1;
 }
 
 .hero-overlay {
@@ -418,8 +419,10 @@ ul {
    ======================================== */
 
 .savoir-faire {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: var(--color-white);
+    z-index: 10;
 }
 
 .values-grid {
@@ -464,8 +467,10 @@ ul {
    ======================================== */
 
 .creations {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: linear-gradient(180deg, var(--color-white) 0%, var(--color-secondary) 100%);
+    z-index: 10;
 }
 
 .creations-grid {
@@ -542,8 +547,10 @@ ul {
    ======================================== */
 
 .occasions {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: var(--color-white);
+    z-index: 10;
 }
 
 .occasions-grid {
@@ -589,8 +596,10 @@ ul {
    ======================================== */
 
 .commander {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-white) 100%);
+    z-index: 10;
 }
 
 .steps-container {
@@ -676,8 +685,10 @@ ul {
    ======================================== */
 
 .collaborations {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: var(--color-white);
+    z-index: 10;
 }
 
 .collaborations-content {
@@ -736,8 +747,10 @@ ul {
    ======================================== */
 
 .contact {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: linear-gradient(180deg, var(--color-white) 0%, var(--color-secondary) 100%);
+    z-index: 10;
 }
 
 .contact-content {
@@ -798,9 +811,11 @@ ul {
    ======================================== */
 
 .footer {
+    position: relative;
     background: var(--color-dark);
     color: var(--color-white);
     padding: var(--spacing-lg) 0 var(--spacing-md);
+    z-index: 10;
 }
 
 .footer-content {
