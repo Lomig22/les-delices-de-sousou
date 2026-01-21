@@ -75,13 +75,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========================================
 
 const hero = document.getElementById('hero');
+let ticking = false;
 
-window.addEventListener('scroll', () => {
+function updateHeroEffects() {
     const scrolled = window.pageYOffset;
     const parallaxSpeed = 0.5;
     
     if (hero && scrolled < hero.offsetHeight) {
+        // Effet parallax
         hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        
+        // Fade-out doux du contenu hero
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            const opacity = Math.max(0, 1 - (scrolled / (hero.offsetHeight * 0.8)));
+            heroContent.style.opacity = opacity;
+        }
+    }
+    
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(updateHeroEffects);
+        ticking = true;
     }
 });
 
@@ -327,22 +345,10 @@ document.querySelectorAll('a, button').forEach(element => {
 });
 
 // ========================================
-// ANIMATION FADEOUT AU DÉFILEMENT
+// ANIMATIONS SUPPLÉMENTAIRES
 // ========================================
 
-const fadeOutElements = document.querySelectorAll('.hero-content');
-
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    
-    fadeOutElements.forEach(element => {
-        const elementTop = element.offsetTop;
-        const opacity = 1 - (scrolled / (elementTop + 500));
-        
-        if (opacity >= 0) {
-            element.style.opacity = opacity;
-        }
-    });
-});
+// Les animations de scroll du hero sont gérées dans la section EFFET PARALLAX HERO
+// pour éviter les conflits et améliorer les performances
 
 console.log('✨ Script initialisé - Les Délices de Sousou');
