@@ -71,7 +71,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ========================================
-// EFFET PARALLAX HERO
+// EFFET FADE-OUT HERO AU SCROLL
 // ========================================
 
 const hero = document.getElementById('hero');
@@ -79,16 +79,12 @@ let ticking = false;
 
 function updateHeroEffects() {
     const scrolled = window.pageYOffset;
-    const parallaxSpeed = 0.5;
     
     if (hero && scrolled < hero.offsetHeight) {
-        // Effet parallax
-        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-        
-        // Fade-out doux du contenu hero
+        // Fade-out progressif du contenu hero uniquement
         const heroContent = document.querySelector('.hero-content');
         if (heroContent) {
-            const opacity = Math.max(0, 1 - (scrolled / (hero.offsetHeight * 0.8)));
+            const opacity = Math.max(0, 1 - (scrolled / (hero.offsetHeight * 0.6)));
             heroContent.style.opacity = opacity;
         }
     }
@@ -101,7 +97,7 @@ window.addEventListener('scroll', () => {
         window.requestAnimationFrame(updateHeroEffects);
         ticking = true;
     }
-});
+}, { passive: true });
 
 // ========================================
 // CRÉATION DE CONFETTIS ANIMÉS

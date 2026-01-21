@@ -334,9 +334,10 @@ ul {
     background-image: url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=1920&h=1080&fit=crop');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     overflow: hidden;
     z-index: 1;
+    will-change: auto;
 }
 
 .hero-overlay {
